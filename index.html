@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Shahzaib – Software Developer Portfolio</title>
+<meta name="description" content="Portfolio of Muhammad Shahzaib: projects, skills and experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12122b;--bg2:#1b1b3d;--ink:#eeecff;--mute:#a3a1c8;--gold:#ffc857;--cyan:#5ce1e6;--line:#2e2e5c;--mx:50%;--my:30%}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "Instrument Sans",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(92,225,230,.13),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:rgba(18,18,43,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:"Bricolage Grotesque";font-size:1.15rem}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav ul a{text-decoration:none;color:var(--mute);font-size:.95rem}
+nav ul a:hover{color:var(--gold)}
+.hire{background:var(--gold);color:#12122b;padding:8px 16px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem}
+header.hero{padding:110px 0 90px;position:relative}
+.status{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);padding:6px 14px;border-radius:999px;color:var(--mute);font-size:.9rem}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(92,225,230,0)}0%{box-shadow:0 0 0 0 rgba(92,225,230,.6)}}
+.hero h1{font-size:clamp(3rem,9.5vw,7.6rem);font-weight:800;letter-spacing:-.035em;margin:26px 0 18px}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--gold)}
+.role{font-size:clamp(1.2rem,2.6vw,1.7rem);color:var(--cyan);min-height:2.2em}
+.role i{display:inline-block;width:3px;height:1.1em;background:var(--gold);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:60ch;color:var(--mute);margin:8px 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.btn{padding:13px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);cursor:pointer;font:inherit;font-weight:600;color:var(--ink);background:transparent}
+.btn.main{background:var(--gold);color:#12122b;border-color:var(--gold)}
+.btn:hover{transform:translateY(-2px)}
+.stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.stats div{font-family:"Bricolage Grotesque";font-size:2.2rem;font-weight:800}
+.stats small{display:block;font:400 .9rem "Instrument Sans";color:var(--mute)}
+section{padding:80px 0}
+section h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:34px;letter-spacing:-.02em}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{color:var(--mute);margin-bottom:16px}
+.facts{background:var(--bg2);border-radius:18px;padding:26px;align-self:start}
+.facts li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.facts li:last-child{border:0}.facts span{color:var(--mute)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.skill{border-left:3px solid var(--cyan);padding:4px 0 4px 18px}
+.skill h3{font-size:1.2rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--bg2);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.88rem}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mute);padding:7px 16px;border-radius:999px;cursor:pointer;font:inherit;font-size:.92rem}
+.filters button[aria-pressed=true]{background:var(--cyan);color:#12122b;border-color:var(--cyan);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{background:var(--bg2);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;border:1px solid transparent;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.card h3{font-size:1.45rem}.card p{color:var(--mute);font-size:.98rem}
+.card .links{margin-top:auto;display:flex;gap:18px;padding-top:8px}
+.card .links a{color:var(--gold);font-weight:600;text-decoration:none}
+.card .links a:hover{text-decoration:underline}
+.line{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 38px 30px}
+.job::before{content:"";position:absolute;left:-8px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px var(--bg)}
+.job time{color:var(--cyan);font-size:.9rem}
+.job h3{font-size:1.35rem;margin:2px 0 6px}.job p{color:var(--mute)}
+.contact{text-align:center;background:var(--bg2);border-radius:28px;padding:70px 24px}
+.contact h2{margin-bottom:14px}
+.contact p{color:var(--mute);max-width:46ch;margin:0 auto 28px}
+.social{display:flex;justify-content:center;gap:22px;margin-top:30px;flex-wrap:wrap}
+.social a{color:var(--mute)}.social a:hover{color:var(--gold)}
+footer{text-align:center;color:var(--mute);padding:34px;font-size:.9rem}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--cyan);color:#12122b;padding:10px 20px;border-radius:12px;font-weight:600;transition:transform .3s;z-index:9}
+.toast.on{transform:translate(-50%,0)}
+@media(max-width:760px){nav ul{display:none}.about{grid-template-columns:1fr}header.hero{padding:70px 0 60px}section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.herogrid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,7.4vw,6.2rem)}
+.stats{gap:28px 36px}.stats div{font-size:2rem}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px}
+.node{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.node small{display:block;color:var(--cyan);font-size:.8rem}
+.node b{font-family:"Bricolage Grotesque";font-size:1rem}
+.flow i{display:block;width:2px;height:30px;margin:0 auto;background:linear-gradient(var(--gold),var(--gold)) 0 0/2px 10px no-repeat,var(--line);animation:pkt 1.6s linear infinite}
+@keyframes pkt{to{background-position:0 30px}}
+.tick{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;background:var(--bg2)}
+.track{display:flex;gap:44px;width:max-content;animation:run 40s linear infinite;font-family:"Bricolage Grotesque";font-size:1.25rem;color:var(--mute)}
+.track span::after{content:"/";margin-left:44px;color:var(--gold)}
+@keyframes run{to{transform:translateX(-50%)}}
+.job h3 em{font-style:normal;color:var(--gold);font-size:.9em;display:block;margin-top:2px;font-family:"Instrument Sans";font-weight:500}
+.job ul{padding-left:18px;color:var(--mute)}.job li{margin-bottom:6px}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr}.flow{max-width:420px}}
+dialog{margin:auto;inset:0;border:1px solid var(--line);border-radius:20px;background:var(--bg2);color:var(--ink);padding:0;width:min(980px,94vw);max-height:92vh;overflow:hidden}
+dialog::backdrop{background:rgba(5,5,20,.78);backdrop-filter:blur(3px)}
+dialog[open]{animation:pop .25s ease}@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line)}
+.dh b{font-family:"Bricolage Grotesque";font-size:1.15rem}.da{display:flex;gap:10px;flex-wrap:wrap}
+.dh .btn{padding:9px 16px;font-size:.92rem}.btn.x{padding:9px 14px}
+#cvFrame{width:100%;height:min(76vh,calc(92vh - 70px));border:0;background:#fff;display:block}
+#mailDlg{width:min(480px,94vw)}.mb{padding:22px;display:flex;flex-direction:column;gap:12px}.mb p{color:var(--cyan);font-weight:600;word-break:break-all}.mb small{color:var(--mute)}
+.mb .btn{text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b id="logo"></b>
+<ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li></ul>
+<a class="hire" href="#contact">Hire me</a></div></nav>
+
+<header class="hero"><div class="wrap herogrid"><div>
+<div class="status"><i class="dot"></i><span id="status"></span></div>
+<h1 id="name"></h1>
+<div class="role"><span id="typed"></span><i></i></div>
+<p class="lead" id="lead"></p>
+<div class="cta"><a class="btn main" href="#projects">See my work</a><button class="btn" data-cv>View / Download CV</button><button class="btn" id="copy">Copy email</button></div>
+<div class="stats" id="stats"></div>
+</div>
+<div class="flow" aria-hidden="true">
+ <div class="node"><small>Client</small><b>Responsive UI</b></div><i></i>
+ <div class="node"><small>API layer</small><b>REST · Spring Security · JWT</b></div><i></i>
+ <div class="node"><small>Services</small><b>Microservices · .NET · Spring Boot</b></div><i></i>
+ <div class="node"><small>Data</small><b>PostgreSQL · SQL Server</b></div>
+</div>
+</div></header>
+<div class="tick" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="wrap"><h2>About me</h2>
+<div class="about"><div id="aboutText"></div><ul class="facts" id="facts"></ul></div></div></section>
+
+<section id="skills"><div class="wrap"><h2>Skills I work with</h2><div class="skills" id="skillGrid"></div></div></section>
+
+<section id="projects"><div class="wrap"><h2>Projects</h2>
+<div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+<div class="grid" id="projGrid"></div></div></section>
+
+<section id="experience"><div class="wrap"><h2>Experience and education</h2><div class="line" id="timeline"></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact">
+<h2>Let’s build something together</h2>
+<p id="contactText"></p>
+<a class="btn main" id="mail" href="#" data-mail>Email me</a> <button class="btn" data-cv>View CV</button>
+<div class="social" id="social"></div></div></div></section>
+<footer id="foot"></footer>
+<dialog id="cvDlg" aria-label="Curriculum vitae">
+ <div class="dh"><b>Muhammad Shahzaib – CV</b><div class="da"><a class="btn main" id="dl" href="#">Download PDF</a><a class="btn" id="newtab" href="#" target="_blank" rel="noopener">Open in new tab</a><button class="btn x" data-close aria-label="Close">✕</button></div></div>
+ <iframe id="cvFrame" title="CV preview" loading="lazy" allow="autoplay"></iframe>
+</dialog>
+<dialog id="mailDlg" aria-label="Send email">
+ <div class="dh"><b>Send me an email</b><button class="btn x" data-close aria-label="Close">✕</button></div>
+ <div class="mb"><p id="mailAddr"></p>
+  <a class="btn main" id="gm" href="#" target="_blank" rel="noopener">Compose in Gmail</a>
+  <a class="btn" id="mt" href="#">Open my mail app</a>
+  <button class="btn" id="cp2">Copy address</button>
+  <small>No mail app installed? Use Gmail or copy the address and write from any email you use.</small></div>
+</dialog>
+<div class="toast" id="toast" role="status">Email copied</div>
+
+<script>
+/* ============ EDIT YOUR DETAILS HERE ============ */
+const C={
+ name:["Muhammad","Shahzaib"],
+ logo:"M. Shahzaib",
+ roles:["Senior Software Engineer","Java Spring Boot Developer","C# .NET Engineer","Backend & API Architect"],
+ status:"Open to new opportunities",
+ lead:"I design and ship secure, scalable systems with Java Spring Boot and C# .NET, connecting clean web interfaces to fast APIs and well-tuned relational databases.",
+ email:"mshahzaib6699@gmail.com",phone:"+923144470868",
+ cvId:"18V0MEAhhfMvn8A5lgMSotGH8mNSzCFq0",   // Google Drive file ID of your CV
+ stats:[["5+","Years of professional experience"],["3","Companies, from games to ERP"],["3","Flagship systems built"],["Gold","Medalist, BS Computer Science"]],
+ about:["I am a Senior Software Engineer based in Lahore with 5+ years of experience building enterprise and consumer software. My strongest ground is the backend: microservices, RESTful APIs, JWT-secured authentication and database performance tuning with JPA/Hibernate.","I started in mobile games, building player progression, analytics and Firebase-backed services. I then moved to ERP and business platforms with Spring Boot. Today at Aisone Systems I build responsive web applications on C# and .NET services and keep the whole path, from interface to API to database, connected and fast.","I work in Agile/Scrum teams, collaborate closely with frontend and QA engineers, and care about code that is easy to maintain."],
+ facts:[["Location","Lahore, Pakistan"],["Current role","Senior Software Engineer"],["Core stack","Spring Boot, .NET, SQL"],["Education","BS Computer Science, GCU Lahore"],["Availability","Open to new roles"]],
+ skills:{
+  "Languages":["Java","C#","JavaScript","SQL"],
+  "Backend":["Spring Boot","Spring Security","JPA / Hibernate","Microservices","REST APIs",".NET"],
+  "Databases":["PostgreSQL","MySQL","SQL Server","SQLite","Firebase"],
+  "DevOps & Cloud":["Docker","Git","CI/CD","Google Cloud","VPS","Railway","Render"],
+  "Build & Practices":["Maven","Gradle","JWT Auth","ORM","Agile / Scrum","System Design"]
+ },
+ projects:[
+  {t:"Advanced Hospital Management System",d:"Enterprise HMS on Spring Boot that automates patient scheduling and financial billing, improving operational efficiency across 1,000+ active records.",tags:["Backend","Healthcare","Spring Boot"],live:"",code:""},
+  {t:"Face Trace AI",d:"AI-powered face recognition engine that detects and matches faces across large image datasets with high precision.",tags:["AI"],live:"",code:""},
+  {t:"Distributed File Storage System",d:"Secure file storage and management platform with upload, download and role-based access control.",tags:["Backend","Security"],live:"",code:""}
+ ],
+ jobs:[
+  {when:"May 2026 – Present",t:"Senior Software Engineer",org:"Aisone Systems",d:["Engineer responsive web applications and user interfaces integrated with C# and .NET backend services.","Streamline end-to-end connectivity between client-side interfaces, APIs and relational databases.","Deliver robust solutions focused on seamless integration, performance and user experience."]},
+  {when:"July 2024 – December 2025",t:"Backend Engineer",org:"Virtual Proz",d:["Designed scalable microservices and RESTful APIs with Spring Boot for ERP and business management modules.","Implemented authentication and authorization with Spring Security and JWT.","Optimized database operations with JPA/Hibernate, reducing query execution overhead.","Worked with frontend and QA teams in Agile/Scrum workflows."]},
+  {when:"Aug 2021 – June 2024",t:"Software Engineer",org:"Alpha Games Lab",d:["Built backend-integrated gameplay systems: player progression, data persistence and analytics tracking.","Integrated Firebase for authentication, cloud storage and real-time data.","Improved performance through memory optimization and efficient state management."]},
+  {when:"Sep 2017 – Aug 2021",t:"BS Computer Science (Gold Medalist)",org:"Government College University, Lahore",d:["Graduated at the top of the class with a gold medal."]}
+ ],
+ contactText:"I’m looking for a senior backend or full-stack role where I can own systems end to end. Send me a message and I’ll reply within a day.",
+ social:[["LinkedIn","https://www.linkedin.com/in/muhammadshahzaib205/"],["Email","mailto:mshahzaib6699@gmail.com"],["+92 314 4470868","tel:+923144470868"]]
+};
+/* ================================================= */
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+document.title=C.name.join(" ")+" – Portfolio";
+$("logo").textContent=C.logo;$("status").textContent=C.status;
+$("name").innerHTML=esc(C.name[0])+"<span>"+esc(C.name[1])+"</span>";
+$("lead").textContent=C.lead;
+$("stats").innerHTML=C.stats.map(s=>`<div>${esc(s[0])}<small>${esc(s[1])}</small></div>`).join("");
+$("aboutText").innerHTML=C.about.map(p=>`<p>${esc(p)}</p>`).join("");
+$("facts").innerHTML=C.facts.map(f=>`<li><span>${esc(f[0])}</span><b>${esc(f[1])}</b></li>`).join("");
+$("skillGrid").innerHTML=Object.entries(C.skills).map(([k,v])=>`<div class="skill"><h3>${esc(k)}</h3><div class="chips">${v.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`).join("");
+$("timeline").innerHTML=C.jobs.map(j=>`<div class="job"><time>${esc(j.when)}</time><h3>${esc(j.t)} <em>${esc(j.org)}</em></h3><ul>${j.d.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+$("contactText").textContent=C.contactText;$("mail").href="mailto:"+C.email;
+$("track").innerHTML=(t=>t+t)(Object.values(C.skills).flat().map(x=>`<span>${esc(x)}</span>`).join(""));
+$("social").innerHTML=C.social.map(s=>`<a href="${esc(s[1])}" ${s[1].startsWith("http")?'target="_blank" rel="noopener"':(s[1].startsWith("mailto")?"data-mail":"")}>${esc(s[0])}</a>`).join("");
+$("foot").textContent="© "+new Date().getFullYear()+" "+C.name.join(" ");
+
+/* projects + filter */
+const tags=["All",...new Set(C.projects.flatMap(p=>p.tags))];let cur="All";
+function drawProjects(){
+ $("filters").innerHTML=tags.map(t=>`<button aria-pressed="${t===cur}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+ $("projGrid").innerHTML=C.projects.filter(p=>cur==="All"||p.tags.includes(cur)).map(p=>`<article class="card"><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p><div class="chips">${p.tags.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div><div class="links">${p.live?`<a href="${esc(p.live)}" target="_blank" rel="noopener">Live demo</a>`:""}${p.code?`<a href="${esc(p.code)}" target="_blank" rel="noopener">Source code</a>`:""}</div></article>`).join("");
+}
+$("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(b){cur=b.dataset.t;drawProjects()}});
+drawProjects();
+
+/* typing role */
+(function(){let i=0,j=0,del=false;const el=$("typed");
+ (function tick(){const w=C.roles[i];el.textContent=w.slice(0,j);
+  if(!del&&j===w.length){del=true;return setTimeout(tick,1500)}
+  if(del&&j===0){del=false;i=(i+1)%C.roles.length}
+  j+=del?-1:1;setTimeout(tick,del?40:80)})();
+})();
+
+/* CV + email popups */
+const ID=C.cvId,cvD=$("cvDlg"),mD=$("mailDlg");
+$("dl").href="https://drive.google.com/uc?export=download&id="+ID;
+$("newtab").href="https://drive.google.com/file/d/"+ID+"/view";
+const subj=encodeURIComponent("Opportunity for "+C.name.join(" "));
+$("mailAddr").textContent=C.email;
+$("gm").href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(C.email)+"&su="+subj;
+$("mt").href="mailto:"+C.email+"?subject="+subj;
+const toast=m=>{const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1800)};
+const copyMail=async()=>{try{await navigator.clipboard.writeText(C.email);toast("Email copied")}catch(e){toast(C.email)}};
+$("cp2").onclick=copyMail;
+document.addEventListener("click",e=>{
+ const cv=e.target.closest("[data-cv]"),ml=e.target.closest("[data-mail]");
+ if(cv){$("cvFrame").src="https://drive.google.com/file/d/"+ID+"/preview";cvD.showModal()}
+ else if(ml){e.preventDefault();mD.showModal()}
+ else if(e.target.closest("[data-close]")){e.target.closest("dialog").close()}
+ else if(e.target.tagName==="DIALOG"){e.target.close()}
+});
+cvD.addEventListener("close",()=>{$("cvFrame").removeAttribute("src")});
+
+/* copy email */
+$("copy").onclick=copyMail;
+
+/* cursor spotlight */
+addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--mx",e.clientX+"px");document.documentElement.style.setProperty("--my",e.clientY+"px")});
+</script>
+</body>
+</html>
